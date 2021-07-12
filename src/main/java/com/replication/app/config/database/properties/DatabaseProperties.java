@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Component
-@ConfigurationProperties("datasource")
+@ConfigurationProperties(prefix = "datasource")
 public class DatabaseProperties {
 
 	private String url;
