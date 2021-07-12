@@ -15,7 +15,8 @@ public class ReplicationRoutingDataSource extends AbstractRoutingDataSource {
 	
 	@Override
     public void setTargetDataSources(Map<Object, Object> targetDataSources) {
-        super.setTargetDataSources(targetDataSources);
+        
+		super.setTargetDataSources(targetDataSources);
 
         dataSourceNameList = new CircularList<>(
                 targetDataSources.keySet()

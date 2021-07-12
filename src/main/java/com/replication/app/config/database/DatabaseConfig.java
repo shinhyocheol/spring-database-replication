@@ -38,7 +38,6 @@ import lombok.extern.slf4j.Slf4j;
 	@PropertySource(value = "classpath:application.yml", ignoreResourceNotFound = true)
 )
 @AllArgsConstructor
-@Slf4j
 public class DatabaseConfig {
 
 	private DatabaseProperties databaseProperty;
