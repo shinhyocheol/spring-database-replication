@@ -13,9 +13,31 @@ spring:
     allow-bean-definition-overriding: false
     
 datasource:
-  url: jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-  slave-list:
-    - name: slave_1
-      url: jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-  username: root
-  password: admin#123
+  master:
+      initialize: true
+      jdbc-url: "jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+      username: "root"
+      password: "admin#123"
+      initial-size: 10
+      max-active: 10
+      max-idle: 20
+      min-idle: 10
+      max-wait: 6000
+      default-auto-commit: true
+      max-total: 20
+      validation-query: select 1
+      pool-prepared-statements: true
+  slave:
+      initialize: true
+      jdbc-url: "jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+      username: "root"
+      password: "admin#123"
+      initial-size: 10
+      max-active: 10
+      max-idle: 20
+      min-idle: 10
+      max-wait: 6000
+      default-auto-commit: true
+      max-total: 20
+      validation-query: select 1
+      pool-prepared-statements: true

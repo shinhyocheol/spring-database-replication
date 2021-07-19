@@ -32,7 +32,9 @@ dependencies {
 	
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+		exclude group: "com.vaadin.external.google", module:"android-json"
 	}
+	testImplementation group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3'
 }
 
 test {

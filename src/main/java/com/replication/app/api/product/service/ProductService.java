@@ -19,7 +19,7 @@ public class ProductService {
 	private CustomModelMapper modelMapper;
 
 	private ProductRepository productRepository;
-
+	
 	public List<ProductResultDto> getProducts() {
 
 		List<Product> entityList = productRepository.findAll();
