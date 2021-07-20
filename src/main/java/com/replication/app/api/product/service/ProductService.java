@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.replication.app.api.product.domain.entity.Product;
 import com.replication.app.api.product.domain.repository.ProductRepository;
@@ -20,6 +21,7 @@ public class ProductService {
 
 	private ProductRepository productRepository;
 	
+	@Transactional(readOnly = true)
 	public List<ProductResultDto> getProducts() {
 
 		List<Product> entityList = productRepository.findAll();
@@ -28,7 +30,8 @@ public class ProductService {
 				.map(entity -> modelMapper.toMapping(entity, ProductResultDto.class))
 				.collect(Collectors.toList());
 	}
-
+	
+	@Transactional
 	public List<ProductResultDto> getProductsFromMaster() {
 		List<Product> entityList = productRepository.findAll();
 

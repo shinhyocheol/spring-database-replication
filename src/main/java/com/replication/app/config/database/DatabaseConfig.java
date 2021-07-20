@@ -22,6 +22,7 @@ import com.replication.app.config.database.datasource.ReplicationRoutingDataSour
 import com.zaxxer.hikari.HikariDataSource;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @EnableJpaAuditing
 @Configuration
@@ -29,6 +30,7 @@ import lombok.AllArgsConstructor;
 		@PropertySource(value = "classpath:application.yml", ignoreResourceNotFound = true)
 		)
 @AllArgsConstructor
+@Slf4j
 public class DatabaseConfig {
 
 	/**
@@ -73,6 +75,8 @@ public class DatabaseConfig {
 		dataSourceMap.put("master", masterDataSource);
 		dataSourceMap.put("slave", slaveDataSource);
 
+		log.debug("DataSource Config Set!!");
+		
 		replicationRoutingDataSource.setTargetDataSources(dataSourceMap);
 		replicationRoutingDataSource.setDefaultTargetDataSource(masterDataSource);
 
