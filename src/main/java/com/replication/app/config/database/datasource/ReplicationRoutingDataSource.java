@@ -20,6 +20,7 @@ public class ReplicationRoutingDataSource extends AbstractRoutingDataSource {
         } else {
             return "master";
         }
-    } 
+    }
+    
 
 }

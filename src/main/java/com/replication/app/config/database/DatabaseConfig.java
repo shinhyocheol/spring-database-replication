@@ -74,8 +74,6 @@ public class DatabaseConfig {
 		Map<Object, Object> dataSourceMap = new LinkedHashMap<>();
 		dataSourceMap.put("master", masterDataSource);
 		dataSourceMap.put("slave", slaveDataSource);
-
-		log.debug("DataSource Config Set!!");
 		
 		replicationRoutingDataSource.setTargetDataSources(dataSourceMap);
 		replicationRoutingDataSource.setDefaultTargetDataSource(masterDataSource);
