@@ -28,27 +28,27 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(length = 100, nullable = false)
 	private String title;
-	
+
 	@Column(columnDefinition = "TEXT", nullable = false)
 	private String content;
-	
-	@CreatedDate
-    @Column(updatable = false)
-    private LocalDateTime createdDate;
 
-    @LastModifiedDate
-    private LocalDateTime modifiedDate;
-	
+	@CreatedDate
+	@Column(updatable = false)
+	private LocalDateTime createdDate;
+
+	@LastModifiedDate
+	private LocalDateTime modifiedDate;
+
 	@Builder
 	public Product(long id, String title, String content) {
-		
+
 		this.id = id;
 		this.title = title;
 		this.content = content;
-		
+
 	}
-	
+
 }
