@@ -17,7 +17,7 @@ datasource:
       initialize: true
       jdbc-url: "jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
       username: "root"
-      password: "admin#123"
+      password: "1234"
       initial-size: 10
       max-active: 10
       max-idle: 20
@@ -29,9 +29,9 @@ datasource:
       pool-prepared-statements: true
   slave:
       initialize: true
-      jdbc-url: "jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+      jdbc-url: "jdbc:mysql://127.0.0.1:3307/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
       username: "root"
-      password: "admin#123"
+      password: "1234"
       initial-size: 10
       max-active: 10
       max-idle: 20
