@@ -15,11 +15,11 @@ spring:
 datasource:
   master:
       initialize: true
-      jdbc-url: "jdbc:mysql://127.0.0.1:3306/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+      jdbc-url: "jdbc:mysql://127.0.0.1:3306/replication?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
       username: "root"
       password: "1234"
   slave:
       initialize: true
-      jdbc-url: "jdbc:mysql://127.0.0.1:3307/platform?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+      jdbc-url: "jdbc:mysql://127.0.0.1:3307/replication?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
       username: "root"
       password: "1234"
